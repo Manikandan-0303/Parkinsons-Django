@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- banner 2 -->
+    <div class="inner-banner-w3ls">
+        <div class="container">
+
+        </div>
+        <!-- //banner 2 -->
+    </div>
+    <!-- page details -->
+    <div class="breadcrumb-agile">
+        <div aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Parkinson's Disease</li>
+            </ol>
+        </div>
+    </div>
+    <!-- //page details -->
+
+    <!-- contact -->
+    <div class="appointment py-5">
+        <div class="py-xl-5 py-lg-3">
+            <div class="w3ls-titles text-center mb-5">
+                <h3 class="title">Parkinson's Disease Prediction</h3>
+                <span>
+                    <i class="fas fa-user-md"></i>
+                </span>
+                <hr />
+                {% if result %}
+                <div class="display-4 my-2 text-center">
+                    Prediction result: {{ result }}
+                </div>
+                {% endif %}
+            </div>
+            <div class="d-flex">
+                <div class="appoint-img">
+
+                </div>
+                <div class="contact-right-w3l appoint-form">
+                    <h5 class="title-w3 text-center mb-5">Enter Patient Data</h5>
+                    <div class="mt-4">
+                        <form class="row" method="POST" action="{% url 'parkinsons' %}">
+                            {% csrf_token %}
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="MDVP:Fo(Hz)">MDVP:Fo(Hz)</label>
+                                    <input type="number" step=".00001" class="form-control" id="MDVP:Fo(Hz)" name="MDVP:Fo(Hz)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Fhi(Hz)">MDVP:Fhi(Hz)</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Fhi(Hz)" name="MDVP:Fhi(Hz)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Flo(Hz)">MDVP:Flo(Hz)</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Flo(Hz)" name="MDVP:Flo(Hz)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Jitter(%)">MDVP:Jitter(%)</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Jitter(%)" name="MDVP:Jitter(%)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Jitter(Abs)">MDVP:Jitter(Abs)</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Jitter(Abs)" name="MDVP:Jitter(Abs)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:RAP">MDVP:RAP</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:RAP" name="MDVP:RAP" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:PPQ">MDVP:PPQ</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:PPQ" name="MDVP:PPQ" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Jitter:DDP">Jitter:DDP</label>
+                                  <input type="number" step=".00001" class="form-control" id="Jitter:DDP" name="Jitter:DDP" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Shimmer">MDVP:Shimmer</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Shimmer" name="MDVP:Shimmer" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:Shimmer(dB)">MDVP:Shimmer(dB)</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:Shimmer(dB)" name="MDVP:Shimmer(dB)" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Shimmer:APQ3">Shimmer:APQ3</label>
+                                  <input type="number" step=".00001" class="form-control" id="Shimmer:APQ3" name="Shimmer:APQ3" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Shimmer:APQ5">Shimmer:APQ5</label>
+                                  <input type="number" step=".00001" class="form-control" id="Shimmer:APQ5" name="Shimmer:APQ5" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="MDVP:APQ">MDVP:APQ</label>
+                                  <input type="number" step=".00001" class="form-control" id="MDVP:APQ" name="MDVP:APQ" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="Shimmer:DDA">Shimmer:DDA</label>
+                                  <input type="number" step=".00001" class="form-control" id="Shimmer:DDA" name="Shimmer:DDA" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="NHR">NHR</label>
+                                  <input type="number" step=".00001" class="form-control" id="NHR" name="NHR" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="HNR">HNR</label>
+                                  <input type="number" step=".00001" class="form-control" id="HNR" name="HNR" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="RPDE">RPDE</label>
+                                  <input type="number" step=".00001" class="form-control" id="RPDE" name="RPDE" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="DFA">DFA</label>
+                                  <input type="number" step=".00001" class="form-control" id="DFA" name="DFA" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="spread1">spread1</label>
+                                  <input type="number" step=".00001" class="form-control" id="spread1" name="spread1" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="spread2">spread2</label>
+                                  <input type="number" step=".00001" class="form-control" id="spread2" name="spread2" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="D2">D2</label>
+                                  <input type="number" step=".00001" class="form-control" id="D2" name="D2" value="0" />
+                                </div>
+                                <div class="form-group">
+                                  <label for="PPE">PPE</label>
+                                  <input type="number" step=".00001" class="form-control" id="PPE" name="PPE" value="0" />
+                                </div>
+
+
+
+
+                                
+                                <!-- Include the rest of your input fields similarly -->
+                                <!-- Repeat for all remaining 18 inputs -->
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-lg btn-block btn btn-primary mb-5">
+                                    Predict
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="clerafix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //contact -->
+{% endblock %}
