@@ -6,8 +6,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 # Create your views here.
 
-model =  joblib.load(r'D:\DPS Lab\ILLNESS-INSIGHT-main\colab files\parkinsons_model.pkl')
-scaler = joblib.load(r'D:\DPS Lab\ILLNESS-INSIGHT-main\colab files\parkinsons_scalar.pkl')
+model =  joblib.load(r'D:\DPS Lab\project\Django-ml-Healthcare-Prediction-Website-main\saved models\parkinsons_model.pkl')
+scaler = joblib.load(r'D:\DPS Lab\project\Django-ml-Healthcare-Prediction-Website-main\saved models\parkinsons_scalar.pkl')
 
 def index(request):
     return render(request,'index.html')
